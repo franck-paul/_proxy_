@@ -10,6 +10,12 @@
  */
 // Classes aliases
 
+// Deprecated since 2.27
+
+class dcUpgrade extends Dotclear\Core\Upgrade\Upgrade
+{
+}
+
 // Deprecated since 2.26
 
 class Clearbricks extends Dotclear\Helper\Clearbricks
