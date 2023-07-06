@@ -445,7 +445,7 @@ class extStaticRecord extends Dotclear\Database\StaticRecord
 }
 
 /** @deprecated since 2.26 use Dotclear\Database\InterfaceHandler */
-class i_dbLayer extends Dotclear\Database\InterfaceHandler
+interface i_dbLayer extends Dotclear\Database\InterfaceHandler
 {
 }
 /** @deprecated since 2.26 use Dotclear\Database\AbstractHandler */
@@ -488,6 +488,7 @@ class dbLayer extends Dotclear\Database\AbstractHandler
     }
     public function db_fetch_assoc($res)
     {
+        return [];
     }
     public function db_result_seek($res, int $row): bool
     {
@@ -499,6 +500,7 @@ class dbLayer extends Dotclear\Database\AbstractHandler
     }
     public function db_last_error($handle)
     {
+        return '';
     }
     public function db_escape_string($str, $handle = null): string
     {
@@ -513,7 +515,7 @@ class dbLayer extends Dotclear\Database\AbstractHandler
 }
 
 /** @deprecated since 2.26 use Dotclear\Database\InterfaceSchema */
-class i_dbSchema extends Dotclear\Database\InterfaceSchema
+interface i_dbSchema extends Dotclear\Database\InterfaceSchema
 {
 }
 /** @deprecated since 2.26 use Dotclear\Database\AbstractSchema */
