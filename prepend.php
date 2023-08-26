@@ -464,6 +464,10 @@ class dbLayer extends Dotclear\Database\AbstractHandler
     {
         return '';
     }
+    public function db_search_path($handle, $path): string
+    {
+        return '';
+    }
     public function db_query($handle, string $query)
     {
     }
