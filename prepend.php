@@ -772,6 +772,11 @@ class dcUrlHandlers extends Dotclear\Core\Frontend\Url
 {
 }
 
+/** @deprecated since 2.28 use Dotclear\Core\Frontend\Tpl */
+class dcTemplate extends Dotclear\Core\Frontend\Tpl
+{
+}
+
 // Deprecated since 2.25
 
 /** @deprecated since 2.25 use Dotclear\Plugin\pages\BackendActions */
