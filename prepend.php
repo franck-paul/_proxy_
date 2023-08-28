@@ -767,6 +767,11 @@ class dcPublic extends Dotclear\Core\Frontend\Utility
 {
 }
 
+/** @deprecated since 2.28 use Dotclear\Core\Frontend\Url */
+class dcUrlHandlers extends Dotclear\Core\Frontend\Url
+{
+}
+
 // Deprecated since 2.25
 
 /** @deprecated since 2.25 use Dotclear\Plugin\pages\BackendActions */
