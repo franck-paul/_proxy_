@@ -87,6 +87,11 @@ class dcPrefs extends Dotclear\Core\UserPreferences
 {
 }
 
+/** @deprecated since 2.28 use Dotclear\Core\Trackback */
+class dcTrackback extends Dotclear\Core\Trackback
+{
+}
+
 // Deprecated since 2.27
 
 /** @deprecated since 2.27 use Dotclear\Core\Upgrade\Upgrade */
