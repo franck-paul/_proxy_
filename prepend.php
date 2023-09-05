@@ -10,6 +10,83 @@
  */
 // Classes aliases
 
+// Deprecated since 2.28
+
+/** @deprecated since 2.28 use Dotclear\Core\PostMedia */
+class dcPostMedia extends Dotclear\Core\PostMedia
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Core\Media */
+class dcMedia extends Dotclear\Core\Media
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Core\Meta */
+class dcMeta extends Dotclear\Core\Meta
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Core\Log */
+class dcLog extends Dotclear\Core\Log
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Core\Error */
+class dcError extends Dotclear\Core\Error
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Core\Frontend\Ctx */
+class context extends Dotclear\Core\Frontend\Ctx
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Core\Auth */
+class dcAuth extends Dotclear\Core\Auth
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Core\Blog */
+class dcBlog extends Dotclear\Core\Blog
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Module\ModuleDefine */
+class dcModuleDefine extends Dotclear\Module\ModuleDefine
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Module\ModuleDefine */
+class dcModules extends Dotclear\Module\Modules
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Schema\Extension\Post */
+class rsExtPost extends Dotclear\Schema\Extension\Post
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Core\BlogWorkspace */
+class dcNamespace extends Dotclear\Core\BlogWorkspace
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Core\BlogSettings */
+class dcSettings extends Dotclear\Core\BlogSettings
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Core\UserWorkspace */
+class dcWorkspace extends Dotclear\Core\UserWorkspace
+{
+}
+
+/** @deprecated since 2.28 use Dotclear\Core\UserPreferences */
+class dcPrefs extends Dotclear\Core\UserPreferences
+{
+}
+
 // Deprecated since 2.27
 
 /** @deprecated since 2.27 use Dotclear\Core\Upgrade\Upgrade */
