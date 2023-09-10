@@ -92,11 +92,6 @@ class dcTrackback extends Dotclear\Core\Trackback
 {
 }
 
-/** @deprecated since 2.28 use Dotclear\Core\Utils */
-class dcUtils extends Dotclear\Core\Utils
-{
-}
-
 /** @deprecated since 2.28 use Dotclear\Core\Categories */
 class dcCategories extends Dotclear\Core\Categories
 {
