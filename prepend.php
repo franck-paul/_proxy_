@@ -10,31 +10,71 @@
  */
 // Classes aliases
 
+use Dotclear\App;
+use Dotclear\Database\MetaRecord;
+
 // Deprecated since 2.28
+
+/** @deprecated since 2.28 use Dotclear\Module\Themes */
+class dcThemes extends Dotclear\Module\Themes
+{
+}
 
 /** @deprecated since 2.28 use Dotclear\Core\PostMedia */
 class dcPostMedia extends Dotclear\Core\PostMedia
 {
+    public function __construct()
+    {
+        parent::__construct(App::con());
+    }
 }
 
 /** @deprecated since 2.28 use Dotclear\Core\Media */
 class dcMedia extends Dotclear\Core\Media
 {
+    public const MEDIA_TABLE_NAME = 'media';
+
+    public function __construct(string $type = '')
+    {
+        parent::__construct(App::auth(), App::behavior(), App::blog(), App::config(), App::con(), App::postMedia());
+        $this->setFilterMimeType($type);
+    }
 }
 
 /** @deprecated since 2.28 use Dotclear\Core\Meta */
 class dcMeta extends Dotclear\Core\Meta
 {
+    public function __construct()
+    {
+        parent::__construct(App::auth(), App::blog(), App::con());
+    }
 }
 
 /** @deprecated since 2.28 use Dotclear\Core\Log */
 class dcLog extends Dotclear\Core\Log
 {
+    public function __construct()
+    {
+        parent::__construct(App::auth(), App::behavior(), App::blog(), App::con(), App::deprecated());
+    }
 }
 
 /** @deprecated since 2.28 use Dotclear\Core\Error */
 class dcError extends Dotclear\Core\Error
 {
+    public function __construct()
+    {
+        parent::__construct(App::deprecated());
+    }
+}
+
+/** @deprecated since 2.28 use Dotclear\Core\Notice */
+class dcNotices extends Dotclear\Core\Notice
+{
+    public function __construct()
+    {
+        parent::__construct(App::behavior(), App::con(), App::deprecated());
+    }
 }
 
 /** @deprecated since 2.28 use Dotclear\Core\Frontend\Ctx */
@@ -70,31 +110,64 @@ class rsExtPost extends Dotclear\Schema\Extension\Post
 /** @deprecated since 2.28 use Dotclear\Core\BlogWorkspace */
 class dcNamespace extends Dotclear\Core\BlogWorkspace
 {
+    public function __construct(?string $blog_id = null, ?string $workspace = null, ?MetaRecord $rs = null)
+    {
+        parent::__construct(App::con(), App::deprecated(), $blog_id, $workspace, $rs);
+    }
 }
 
 /** @deprecated since 2.28 use Dotclear\Core\BlogSettings */
 class dcSettings extends Dotclear\Core\BlogSettings
 {
+    public function __construct(?string $blog_id = null)
+    {
+        parent::__construct(App::blogWorkspace(), App::con(), App::deprecated(), $blog_id);
+    }
 }
 
 /** @deprecated since 2.28 use Dotclear\Core\UserWorkspace */
 class dcWorkspace extends Dotclear\Core\UserWorkspace
 {
+    public function __construct(?string $user_id = null, ?string $workspace = null, ?MetaRecord $rs = null)
+    {
+        parent::__construct(App::con(), $user_id, $workspace, $rs);
+    }
 }
 
 /** @deprecated since 2.28 use Dotclear\Core\UserPreferences */
 class dcPrefs extends Dotclear\Core\UserPreferences
 {
+    public function __construct(?string $user_id = null, ?string $user_workspace = null)
+    {
+        parent::__construct(App::con(), App::userWorkspace(), (string) $user_id, $user_workspace);
+    }
 }
 
 /** @deprecated since 2.28 use Dotclear\Core\Trackback */
 class dcTrackback extends Dotclear\Core\Trackback
 {
+    public function __construct()
+    {
+        parent::__construct(App::behavior(), APP::blog(), App::config(), App::con(), App::postTypes());
+    }
 }
 
 /** @deprecated since 2.28 use Dotclear\Core\Categories */
 class dcCategories extends Dotclear\Core\Categories
 {
+    public function __construct()
+    {
+        parent::__construct(App::con());
+    }
+}
+
+/** @deprecated since 2.28 use Dotclear\Core\Rest */
+class dcRestServer extends Dotclear\Core\Rest
+{
+    public function __construct()
+    {
+        parent::__construct(App::config());
+    }
 }
 
 // Deprecated since 2.27
@@ -544,7 +617,7 @@ class dbLayer extends Dotclear\Database\AbstractHandler
     public function db_pconnect(string $host, string $user, string $password, string $database)
     {
     }
-    public function db_close($handle)
+    public function db_close($handle): void
     {
     }
     public function db_version($handle): string
@@ -772,13 +845,13 @@ class adminUserPref extends Dotclear\Core\Backend\UserPref
 /** @deprecated since 2.26 use Dotclear\Core\Backend\Action\Actions */
 class dcActions extends Dotclear\Core\Backend\Action\Actions
 {
-    public function beginPage(string $breadcrumb = '', string $head = '')
+    public function beginPage(string $breadcrumb = '', string $head = ''): void
     {
     }
-    public function endPage()
+    public function endPage(): void
     {
     }
-    protected function fetchEntries(ArrayObject $from)
+    protected function fetchEntries(ArrayObject $from): void
     {
     }
 }
