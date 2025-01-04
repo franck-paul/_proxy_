@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief _proxy_, a plugin for Dotclear 2
  *
@@ -741,7 +742,7 @@ class dbLayer extends Dotclear\Database\AbstractHandler
         return 1;
     }
 
-    public function db_last_error($handle)
+    public function db_last_error($handle): false|string
     {
         return '';
     }
