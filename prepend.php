@@ -992,8 +992,8 @@ class dcAdminCombos extends Dotclear\Core\Backend\Combos
 {
 }
 
-/** @deprecated since 2.26 use Dotclear\Core\Backend\Filter\Filter */
-class dcAdminFilter extends Dotclear\Core\Backend\Filter\Filter
+/** @deprecated since 2.33 use Dotclear\Helper\Stack\Filter */
+class dcAdminFilter extends Dotclear\Helper\Stack\Filter
 {
 }
 
