@@ -679,10 +679,12 @@ class dbLayer extends Dotclear\Database\AbstractHandler
 {
     public function db_connect(string $host, string $user, string $password, string $database)
     {
+        return null;
     }
 
     public function db_pconnect(string $host, string $user, string $password, string $database)
     {
+        return null;
     }
 
     public function db_close($handle): void
@@ -701,10 +703,12 @@ class dbLayer extends Dotclear\Database\AbstractHandler
 
     public function db_query($handle, string $query)
     {
+        return null;
     }
 
     public function db_exec($handle, string $query)
     {
+        return null;
     }
 
     public function db_num_fields($res): int
@@ -727,7 +731,10 @@ class dbLayer extends Dotclear\Database\AbstractHandler
         return '';
     }
 
-    public function db_fetch_assoc($res)
+    /**
+     * @return     array<mixed>
+     */
+    public function db_fetch_assoc($res): array
     {
         return [];
     }
@@ -742,7 +749,7 @@ class dbLayer extends Dotclear\Database\AbstractHandler
         return 1;
     }
 
-    public function db_last_error($handle): false|string
+    public function db_last_error($handle): string
     {
         return '';
     }
