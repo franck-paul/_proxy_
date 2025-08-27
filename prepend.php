@@ -24,10 +24,6 @@ class dcThemes extends Dotclear\Module\Themes
 /** @deprecated since 2.28 use Dotclear\Core\PostMedia */
 class dcPostMedia extends Dotclear\Core\PostMedia
 {
-    public function __construct()
-    {
-        parent::__construct(App::con());
-    }
 }
 
 /** @deprecated since 2.28 use Dotclear\Core\Media */
@@ -37,7 +33,7 @@ class dcMedia extends Dotclear\Core\Media
 
     public function __construct(string $type = '')
     {
-        parent::__construct(App::auth(), App::behavior(), App::blog(), App::config(), App::con(), App::postMedia());
+        parent::__construct(App::auth(), App::behavior(), App::blog(), App::config(), App::db(), App::postMedia());
         $this->setFilterMimeType($type);
     }
 }
@@ -47,7 +43,7 @@ class dcMeta extends Dotclear\Core\Meta
 {
     public function __construct()
     {
-        parent::__construct(App::auth(), App::blog(), App::con());
+        parent::__construct(App::auth(), App::blog(), App::db());
     }
 }
 
@@ -56,7 +52,7 @@ class dcLog extends Dotclear\Core\Log
 {
     public function __construct()
     {
-        parent::__construct(App::auth(), App::behavior(), App::blog(), App::con(), App::deprecated());
+        parent::__construct(App::auth(), App::behavior(), App::blog(), App::db(), App::deprecated());
     }
 }
 
@@ -74,7 +70,7 @@ class dcNotices extends Dotclear\Core\Notice
 {
     public function __construct()
     {
-        parent::__construct(App::behavior(), App::con(), App::deprecated());
+        parent::__construct(App::behavior(), App::db(), App::deprecated());
     }
 }
 
@@ -113,7 +109,7 @@ class dcNamespace extends Dotclear\Core\BlogWorkspace
 {
     public function __construct(?string $blog_id = null, ?string $workspace = null, ?MetaRecord $rs = null)
     {
-        parent::__construct(App::con(), App::deprecated(), $blog_id, $workspace, $rs);
+        parent::__construct(App::db(), App::deprecated(), $blog_id, $workspace, $rs);
     }
 }
 
@@ -122,7 +118,7 @@ class dcSettings extends Dotclear\Core\BlogSettings
 {
     public function __construct(?string $blog_id = null)
     {
-        parent::__construct(App::blogWorkspace(), App::con(), App::deprecated(), $blog_id);
+        parent::__construct(App::blogWorkspace(), App::db(), App::deprecated(), $blog_id);
     }
 }
 
@@ -131,7 +127,7 @@ class dcWorkspace extends Dotclear\Core\UserWorkspace
 {
     public function __construct(?string $user_id = null, ?string $workspace = null, ?MetaRecord $rs = null)
     {
-        parent::__construct(App::con(), $user_id, $workspace, $rs);
+        parent::__construct(App::db(), $user_id, $workspace, $rs);
     }
 }
 
@@ -140,7 +136,7 @@ class dcPrefs extends Dotclear\Core\UserPreferences
 {
     public function __construct(?string $user_id = null, ?string $user_workspace = null)
     {
-        parent::__construct(App::con(), App::userWorkspace(), (string) $user_id, $user_workspace);
+        parent::__construct(App::db(), App::userWorkspace(), (string) $user_id, $user_workspace);
     }
 }
 
@@ -149,7 +145,7 @@ class dcTrackback extends Dotclear\Core\Trackback
 {
     public function __construct()
     {
-        parent::__construct(App::behavior(), APP::blog(), App::config(), App::con(), App::postTypes());
+        parent::__construct(App::behavior(), APP::blog(), App::config(), App::db(), App::postTypes());
     }
 }
 
@@ -158,7 +154,7 @@ class dcCategories extends Dotclear\Core\Categories
 {
     public function __construct()
     {
-        parent::__construct(App::con());
+        parent::__construct(App::db());
     }
 }
 
@@ -670,7 +666,7 @@ class extStaticRecord extends Dotclear\Database\StaticRecord
 }
 
 /** @deprecated since 2.26 use Dotclear\Database\InterfaceHandler */
-interface i_dbLayer extends Dotclear\Database\InterfaceHandler
+interface i_dbLayer extends Dotclear\Interface\Database\DbHandlerInterface
 {
 }
 
@@ -769,7 +765,7 @@ class dbLayer extends Dotclear\Database\AbstractHandler
 }
 
 /** @deprecated since 2.26 use Dotclear\Database\InterfaceSchema */
-interface i_dbSchema extends Dotclear\Database\InterfaceSchema
+interface i_dbSchema extends Dotclear\Interface\Database\DbSchemaInterface
 {
 }
 
