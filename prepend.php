@@ -613,7 +613,7 @@ class extStaticRecord extends Dotclear\Database\StaticRecord
 }
 
 /** @deprecated since 2.26 use Dotclear\Database\InterfaceHandler */
-interface i_dbLayer extends Dotclear\Interface\Database\DbHandlerInterface
+interface i_dbLayer extends Dotclear\Interface\Database\ConnectionInterface
 {
 }
 
@@ -712,7 +712,7 @@ class dbLayer extends Dotclear\Database\AbstractHandler
 }
 
 /** @deprecated since 2.26 use Dotclear\Database\InterfaceSchema */
-interface i_dbSchema extends Dotclear\Interface\Database\DbSchemaInterface
+interface i_dbSchema extends Dotclear\Interface\Database\SchemaInterface
 {
 }
 
