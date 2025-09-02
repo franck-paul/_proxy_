@@ -587,11 +587,6 @@ class dcTruncateStatement extends Dotclear\Database\Statement\TruncateStatement
 {
 }
 
-/** @deprecated since 2.26 use Dotclear\Database\Session */
-class sessionDB extends Dotclear\Database\Session
-{
-}
-
 /** @deprecated since 2.26 use Dotclear\Database\Cursor */
 class cursor extends Dotclear\Database\Cursor
 {
