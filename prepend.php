@@ -811,7 +811,7 @@ class dcRecord extends Dotclear\Database\MetaRecord
 }
 
 /** @deprecated since 2.26 use Dotclear\Core\Process */
-class dcNsProcess extends Dotclear\Core\Process
+class dcNsProcess extends \Dotclear\Helper\Process\AbstractProcess
 {
     public static function init(): bool
     {
@@ -1009,8 +1009,8 @@ class dcPublic extends Dotclear\Core\Frontend\Utility
 {
 }
 
-/** @deprecated since 2.28 use Dotclear\Core\Frontend\Url */
-class dcUrlHandlers extends Dotclear\Core\Frontend\Url
+/** @deprecated since 2.28 use Dotclear\Core\Url */
+class dcUrlHandlers extends Dotclear\Core\Url
 {
 }
 
