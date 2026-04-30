@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * @brief _proxy_, a plugin for Dotclear 2
  *
