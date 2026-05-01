@@ -726,21 +726,33 @@ class dbSchema extends Dotclear\Database\AbstractSchema
         return [];
     }
 
+    /**
+     * @return array{}
+     */
     public function db_get_columns(string $table): array
     {
         return [];
     }
 
+    /**
+     * @return array{}
+     */
     public function db_get_keys(string $table): array
     {
         return [];
     }
 
+    /**
+     * @return array{}
+     */
     public function db_get_indexes(string $table): array
     {
         return [];
     }
 
+    /**
+     * @return array{}
+     */
     public function db_get_references(string $table): array
     {
         return [];
