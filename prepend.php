@@ -694,7 +694,7 @@ class dbLayer extends Dotclear\Database\AbstractHandler
         return '';
     }
 
-    public function db_escape_string($str, $handle = null): string
+    public function db_escape_string(string $str, $handle = null): string
     {
         return '';
     }
@@ -778,7 +778,7 @@ class dbSchema extends Dotclear\Database\AbstractSchema
     {
     }
 
-    public function db_create_reference(string $name, string $table, array $fields, string $foreign_table, array $foreign_fields, $update, $delete): void
+    public function db_create_reference(string $name, string $table, array $fields, string $foreign_table, array $foreign_fields, false|string $update, false|string $delete): void
     {
     }
 
@@ -798,7 +798,7 @@ class dbSchema extends Dotclear\Database\AbstractSchema
     {
     }
 
-    public function db_alter_reference(string $name, string $newname, string $table, array $fields, string $foreign_table, array $foreign_fields, $update, $delete): void
+    public function db_alter_reference(string $name, string $newname, string $table, array $fields, string $foreign_table, array $foreign_fields, false|string $update, false|string $delete): void
     {
     }
 
