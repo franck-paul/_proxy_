@@ -154,12 +154,12 @@ class formColor extends Dotclear\Helper\Html\Form\Color
 /** @deprecated since 2.26 use Dotclear\Helper\Html\Form\Component */
 class formComponent extends Dotclear\Helper\Html\Form\Component
 {
-    protected function render(): string
+    public function render(): string
     {
         return '';
     }
 
-    protected function getDefaultElement(): string
+    public function getDefaultElement(): string
     {
         return '';
     }
