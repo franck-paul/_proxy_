@@ -931,7 +931,7 @@ class dcActions extends Dotclear\Core\Backend\Action\Actions
     {
     }
 
-    protected function fetchEntries(ArrayObject $from): void
+    protected function fetchEntries(ArrayObject $arrayObject): void
     {
     }
 }
